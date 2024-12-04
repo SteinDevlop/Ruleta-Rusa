@@ -1,0 +1,75 @@
+@import url("./template.css");
+
+.game {
+  background-image: url(../img/interr.png);
+  background-size: contain;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+h1 {
+  font-family: var(--title-font);
+  font-size: var(--big);
+  font-weight: normal;
+  margin: 0;
+}
+
+.options {
+  display: flex;
+  margin: 2.5em 0 4em;
+}
+
+.op {
+  width: 184px;
+  height: 249px;
+  margin: 0 2.5em;
+
+  border: 2px solid var(--white);
+  border-radius: 20px;
+  background-color: var(--white-a);
+
+  color: var(--white);
+  text-decoration: none;
+  text-transform: lowercase;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.op:hover {
+  filter: sepia(100%) saturate(200%) brightness(90%);
+}
+
+.op img {
+  width: auto;
+  height: 130px;
+}
+
+h3 {
+  font-family: var(--normal-font);
+  font-size: var(--normal);
+  margin: 1rem 0 0;
+}
+
+footer {
+  width: unset;
+}
+
+footer img {
+  width: auto;
+  height: 45px;
+}
+
+footer img:hover {
+  filter: sepia(100%) saturate(200%) brightness(90%);
+}

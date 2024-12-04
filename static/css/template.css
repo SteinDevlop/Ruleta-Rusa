@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Aubrey&family=Mate+SC&display=swap");
+
+:root {
+  /*---FONTS---*/
+  --normal-font: "Mate SC", serif;
+  --title-font: "Aubrey", system-ui;
+
+  /*---COLORS---*/
+  --brown: #5d341c;
+  --white: #f0f0f0;
+  --black: #13010f;
+
+  --brown-a: #5d341c33;
+  --white-a: #f0f0f033;
+  --hover: #c2a883;
+
+  /*---FONT SIZE---*/
+  --normal: 1.5em;
+  --small: 1em;
+  --big: 3em;
+}
+
+body {
+  background-color: #000;
+  color: var(--white);
+}
+
+.game {
+  position: relative;
+
+  width: 1003px;
+  height: 700px;
+  margin: 30px auto;
+}
+
+.popup {
+  width: 550px;
+  height: 301px;
+
+  background-color: var(--white);
+  color: var(--black);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+footer {
+  width: 80%;
+  margin: 2em auto;
+
+  position: absolute;
+  bottom: 0;
+}

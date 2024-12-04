@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% block head %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/options.css') }}"
+/>
+{% endblock %} {% block game %}
+<main>
+  <h1>Modo de Juego</h1>
+  <div class="options">
+    <a class="op" href="/options/s/config/">
+      <img
+        src="{{ url_for('static', filename='img/rev.png') }}"
+        alt="icono solitario"
+      />
+      <h3>Solitario</h3>
+    </a>
+    <a class="op" href="/options/c/config/">
+      <img
+        src="{{ url_for('static', filename='img/two_rev.png') }}"
+        alt="icono cooperativo"
+      />
+      <h3>Cooperativo</h3>
+    </a>
+  </div>
+</main>
+<footer>
+  <a href="/">
+    <img
+      src="{{ url_for('static', filename='img/rus_rou_icon.png') }}"
+      alt="Russean Roulette Icon"
+    />
+  </a>
+</footer>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html'%} {% block head %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/coop.css') }}"
+/>
+{% endblock %} {% block game %}
+<main>
+  <div class="title">
+    <img
+      src="{{ url_for('static', filename='img/two_rev.png') }}"
+      alt="icono cooperativo"
+    />
+    <h1 class="top">Jugador en</h1>
+    <h1 class="bottom">Cooperativo</h1>
+  </div>
+  <form action="{{ url_for('cooperativo') }}" method="POST">
+    <div class="config">
+      <fieldset>
+        <h3>Jugadores</h3>
+        <div class="down">
+          <button type="button" name="minus" id="minus-s"><</button>
+          <input
+            type="number"
+            name="players"
+            id="config-1"
+            min="2"
+            max="4"
+            value="2"
+          />
+          <button type="button" name="sums" id="plus-s">></button>
+        </div>
+      </fieldset>
+      <fieldset>
+        <h3>Número de Balas</h3>
+        <div class="down">
+          <button type="button" name="minus" id="minus-d"><</button>
+          <input
+            type="number"
+            name="munition"
+            id="config-2"
+            min="1"
+            max="5"
+            value="1"
+          />
+          <button type="button" name="sums" id="plus-d">></button>
+        </div>
+      </fieldset>
+    </div>
+    <button type="submit" id="submit" name="submit">Play</button>
+  </form>
+</main>
+<footer>
+  <a href="/options/" class="back"> Atrás </a>
+  <a href="/">
+    <img
+      src="{{ url_for('static', filename='img/rus_rou_icon.png') }}"
+      alt="Russean Roulette Icon"
+    />
+  </a>
+</footer>
+{% endblock %} {% block script %}
+<script src="{{ url_for('static', filename='js/coop.js') }}"></script>
+{% endblock %}

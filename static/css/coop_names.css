@@ -1,0 +1,156 @@
+@import url(../css/template.css);
+
+.game {
+  position: relative;
+  background-image: url("../img/lonely_table.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle,
+    #cec0ad19 10%,
+    #211a1599 50%,
+    #14110eff 100%
+  );
+  z-index: 1;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 2.5em;
+}
+
+.title img {
+  width: auto;
+  height: 55px;
+}
+
+h1 {
+  font-family: var(--title-font);
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 0;
+}
+
+.top,
+label {
+  font-size: var(--normal);
+}
+
+.bottom {
+  font-size: var(--big);
+  line-height: 0.7em;
+}
+
+main {
+  margin: 0 10%;
+  z-index: 1000;
+}
+
+form {
+  width: 100%;
+}
+
+.form-wrapped {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+form fieldset {
+  width: 38%;
+  margin: 20px;
+  padding: 20px;
+  font-family: var(--title-font);
+
+  color: #ffeace;
+  text-align: left;
+  text-transform: uppercase;
+
+  border-radius: 20px;
+  border-color: #ffeace;
+}
+
+form input {
+  width: 95%;
+  height: 1.8rem;
+  margin-top: 0.5rem;
+  padding: 0 10px;
+
+  border: none;
+  border-radius: 20px;
+
+  background-color: transparent;
+  font-family: var(--normal-font);
+  color: #ffeace;
+}
+
+form input::placeholder {
+  color: var(--white);
+  opacity: 0.7;
+}
+
+form input:focus {
+  outline: none;
+  background-color: rgba(36, 24, 15, 0.6);
+}
+
+a:first-child,
+#submit {
+  color: var(--white);
+  font-family: var(--normal-font);
+  font-size: var(--normal);
+  text-transform: lowercase;
+  text-align: center;
+
+  width: 9rem;
+  margin: 0.5em 0;
+
+  text-decoration: none;
+  background: none;
+
+  padding-bottom: 4.5px;
+  border: 2px solid var(--white);
+  border-radius: 40px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+a:hover,
+#submit:hover {
+  filter: sepia(100%) saturate(200%) brightness(90%);
+  cursor: pointer;
+}
+
+footer img {
+  width: auto;
+  height: 45px;
+}
+
+footer img:hover {
+  filter: sepia(100%) saturate(200%) brightness(90%);
+}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block head%}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/start.css') }}"
+/>
+{% endblock %} {% block game %}
+<main>
+  <img
+    src="{{ url_for('static', filename='img/rus_rou_icon.png') }}"
+    alt="Russean Roulette Icon"
+  />
+  <a href="/options/">Play </a>
+</main>
+<footer>
+  <p>© Estructura de Datos 2053 - Grupo 2</p>
+</footer>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'base.html' %} {% block head %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/coop_play.css') }}"
+/>
+{% endblock %} {% block game %}
+<div id="player-screen"></div>
+<div id="pistola" style="display: flex"></div>
+<div class="popup-overlay" id="playerPopup">
+  <div class="popup" id="popup">
+    <img
+      src="{{ url_for('static', filename='img/rus_rou_icon.png') }}"
+      alt="Russean Roulette Icon"
+    />
+    <p class="message">turno de</p>
+    <h1 class="player-name triggered-name" id="player-turn"></h1>
+  </div>
+</div>
+<div class="popup-overlay" id="popupRevolver">
+  <div class="popup" id="popupRuleta">
+    <div id="ruleta">
+      <div id="tambor"></div>
+      <div class="triangle"></div>
+    </div>
+    <div class="interact">
+      <p class="message">hora de girar</p>
+      <h1 class="player-name triggered-name" id="player-spin"></h1>
+      <button id="spin" class="triggered-name">GIRAR</button>
+      <img
+        src="{{ url_for('static', filename='img/rus_rou_icon.png') }}"
+        alt="Russean Roulette Icon"
+      />
+    </div>
+  </div>
+</div>
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup" id="popup">
+    <img
+      src="{{ url_for('static', filename='img/rus_rou_icon.png') }}"
+      alt="Russean Roulette Icon"
+    />
+    <p class="message">El Jugador <span class="player-name"></span></p>
+    <h1 class="triggered-selection" id="result"></h1>
+  </div>
+</div>
+<div class="popup-overlay" id="popupVolver">
+  <div class="popup" id="popup">
+    <a href="/">
+      <img
+        src="{{ url_for('static', filename='img/rus_rou_icon.png') }}"
+        alt="Russean Roulette Icon"
+      />
+    </a>
+    <a href="{{ url_for('options') }}" class="triggered-selection"
+      >VOLVER A JUGAR</a
+    >
+  </div>
+</div>
+{% endblock %} {% block script %}
+<script>
+  window.flaskVariables = {
+    players: {{ players }},
+    munition: {{ munition }},
+    playersNames: {{ player_names|tojson }},
+  };
+</script>
+<script
+  type="module"
+  src="{{ url_for('static', filename='js/coop_game.js') }}"
+></script>
+{% endblock %}

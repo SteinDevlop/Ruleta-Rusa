@@ -1,0 +1,48 @@
+{% extends 'base.html'%} {% block head %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/coop_names.css') }}"
+/>
+{% endblock %} {% block game %}
+<main>
+  <div class="title">
+    <img
+      src="{{ url_for('static', filename='img/two_rev.png') }}"
+      alt="icono cooperativo"
+    />
+    <h1 class="top">Jugador en</h1>
+    <h1 class="bottom">Cooperativo</h1>
+  </div>
+  <form
+    action="{{ url_for('coop_play', players=players, munition=munition) }}"
+    method="POST"
+  >
+    <div class="form-wrapped">
+      {% for i in range(players) %}
+      <fieldset class="player-names">
+        <label for="input-{{i}}">Player {{i + 1}}</label>
+        <input
+          type="text"
+          id="input-{{i}}"
+          name="name-input"
+          class="name-input"
+          placeholder="Ingresa Tu Nombre"
+          maxlength="12"
+          required
+        />
+      </fieldset>
+      {% endfor %}
+    </div>
+    <button type="submit" id="submit" name="submit">Play</button>
+  </form>
+</main>
+<footer>
+  <a href="/options/" class="back"> Atrás </a>
+  <a href="/">
+    <img
+      src="{{ url_for('static', filename='img/rus_rou_icon.png') }}"
+      alt="Russean Roulette Icon"
+    />
+  </a>
+</footer>
+{% endblock %}

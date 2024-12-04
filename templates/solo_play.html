@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% block head %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/solo_play.css') }}"
+/>
+{% endblock %} {% block game %}
+<main id="main">
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup" id="popup">
+      <a href="/">
+        <img
+          src="{{ url_for('static', filename='img/rus_rou_icon.png') }}"
+          alt="Russean Roulette Icon"
+        />
+      </a>
+      <h1 class="result triggered-selection" id="result"></h1>
+      <a href="{{ url_for('options') }}" class="triggered-selection"
+        >VOLVER A JUGAR</a
+      >
+    </div>
+  </div>
+</main>
+{% endblock %} {% block script %}
+<script>
+  window.flaskVariables = {
+    arms: "{{ arms }}",
+    armed: "{{ armed }}",
+  };
+</script>
+<script
+  type="module"
+  src="{{ url_for('static', filename='js/solo_game.js') }}"
+></script>
+{% endblock %}

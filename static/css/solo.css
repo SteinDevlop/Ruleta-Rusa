@@ -1,0 +1,159 @@
+@import url(./template.css);
+
+.game {
+  background-image: url(../img/interr.png);
+  background-size: contain;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  padding-bottom: 6.5em;
+}
+
+.title {
+  margin: 0 0 2.5em;
+}
+
+.title img {
+  width: auto;
+  height: 55px;
+}
+
+h1 {
+  font-family: var(--title-font);
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 0;
+}
+
+.top {
+  font-size: var(--normal);
+}
+
+.bottom {
+  font-size: var(--big);
+  line-height: 0.7em;
+}
+
+h3,
+a,
+button,
+input {
+  color: var(--white);
+  font-family: var(--normal-font);
+  font-size: var(--normal);
+  text-transform: lowercase;
+  text-align: center;
+  margin: 0;
+}
+
+.config {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.config fieldset {
+  padding: 0;
+  margin: 2.5em 2.5em 2.5em;
+
+  height: 150px;
+  width: 270px;
+
+  border-radius: 20px;
+}
+
+h3 {
+  margin: 1.5rem;
+}
+
+.down {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  color: var(--brown);
+}
+
+button[type="button"] {
+  height: 3.1em;
+  width: 100%;
+
+  color: var(--brown);
+  border: 2px solid var(--white);
+
+  cursor: pointer;
+}
+
+#minus-s,
+#minus-d {
+  border-radius: 0 0 0 20px;
+  color: var(--white);
+  cursor: unset;
+}
+#plus-s,
+#plus-d {
+  border-radius: 0 0 20px 0;
+}
+
+input[type="number"] {
+  flex-grow: 3;
+  width: 100%;
+  height: auto;
+
+  border: none;
+}
+
+.back,
+#submit {
+  width: 9rem;
+  margin: 0.5em 0;
+
+  text-decoration: none;
+  background: none;
+
+  padding-bottom: 4.5px;
+  border: 2px solid var(--white);
+  border-radius: 40px;
+}
+
+footer {
+  width: 90%;
+  margin: 2em auto;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+a:hover,
+#submit:hover {
+  filter: sepia(100%) saturate(200%) brightness(90%);
+  cursor: pointer;
+}
+
+footer img {
+  width: auto;
+  height: 45px;
+}
+
+footer img:hover {
+  filter: sepia(100%) saturate(200%) brightness(90%);
+}
+
+/* Esconder flechas */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  pointer-events: none;
+}

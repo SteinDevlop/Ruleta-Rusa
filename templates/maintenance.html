@@ -1,0 +1,65 @@
+{% extends 'base.html' %} {% block head %}
+<style>
+  @import url("{{ url_for('static', filename='css/template.css') }}");
+  .game {
+    position: relative;
+    background-color: #211a15;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    padding-bottom: 6.5em;
+    margin: 0 0 2.5em;
+  }
+
+  main img {
+    width: auto;
+    height: 55px;
+  }
+
+  h1 {
+    font-family: var(--title-font);
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 0;
+    font-size: var(--big);
+  }
+
+  footer {
+    width: unset;
+  }
+
+  footer img {
+    width: auto;
+    height: 45px;
+  }
+
+  footer img:hover {
+    filter: sepia(100%) saturate(200%) brightness(90%);
+  }
+</style>
+{% endblock %} {% block game %}
+<main>
+  <img
+    src="{{ url_for('static', filename='img/two_rev.png') }}"
+    alt="icono solitario"
+  />
+  <h1>EN MANTENIMIENTO</h1>
+</main>
+<footer>
+  <a href="/">
+    <img
+      src="{{ url_for('static', filename='img/rus_rou_icon.png') }}"
+      alt="Russean Roulette Icon"
+    />
+  </a>
+</footer>
+{% endblock %}
